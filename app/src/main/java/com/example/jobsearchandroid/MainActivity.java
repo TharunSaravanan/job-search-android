@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             String response = HttpHelper.login(userName, password);
             GlobalContainer.UserToken = response;
-            Intent intent = new Intent(this, MatchActivity.class);
+            Intent intent = new Intent(this, JobList.class);
             startActivity(intent);
         } catch (IOException e) {
             e.printStackTrace();
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             String response = HttpHelper.register(user);
             GlobalContainer.UserToken = response;
             Toast.makeText(this, "Signup successful", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, MatchActivity.class);
+            Intent intent = new Intent(this, JobList.class);
             startActivity(intent);
             // Handle the signup response here
             // For example, if the response contains a success message, show a signup success message
